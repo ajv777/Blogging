@@ -1,0 +1,8 @@
+.card img {
+    width: 300px;
+}
+.badge {
+    background-color:lightseagreen;
+    padding: 9px;
+    color: white;
+}

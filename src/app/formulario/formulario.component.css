@@ -1,0 +1,20 @@
+.formulario {
+    display:flex;
+    flex-direction: column;
+    padding: 0px 200px;
+}
+
+.formulario .form-group {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+}
+
+input.ng-invalid.ng-touched , textarea.ng-invalid.ng-touched{
+  border: 1px solid tomato;
+}
+
+.error {
+  color: tomato;
+  margin-top: 8px;
+}
