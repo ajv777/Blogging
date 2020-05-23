@@ -1,8 +1,8 @@
 <nav class="navbar navbar-expand-lg navbar-mainbg">
-  <a class="navbar-brand navbar-logo" href="#">Cocina con Ana</a>
+  <a class="navbar-brand navbar-logo" [routerLink]="['/blog']">Cocina con Ana</a>
 </nav>
 <div class="container">
-    <form class="mt-3" novalidate [formGroup]="formulario" (ngSubmit)="onSubmit($event)">
+    <form class="mt-3" novalidate [formGroup]="formulario" (ngSubmit)="onSubmit()">
         <div class="form-group">
             <label>Titulo</label>
             <input type="text" class="form-control" formControlName="titulo">

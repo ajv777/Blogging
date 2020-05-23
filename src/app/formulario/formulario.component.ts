@@ -17,10 +17,6 @@ export class FormularioComponent implements OnInit {
 
   constructor(private postService: PostsService, private router: Router) {
     this.currentDate = new Date();
-    // if (localStorage.item('postGuardados')) {
-    //   const arrPostGuardados = JSON.parse(localStorage.getItem('postGuardados'));
-    //   this.formulario = arrPostGuardados;
-    // } else {
       this.formulario = new FormGroup({
         titulo: new FormControl('', [
           Validators.required
@@ -52,13 +48,10 @@ export class FormularioComponent implements OnInit {
     this.postService.agregarPost(nuevoPost);
     this.router.navigate(['/blog']);
     
-    // PRUEBA: va ok aquí. Se guarda / FALTA QUE SE PINTE ARRIBA
+    // Guardar en LocalStorage
     // const postStr = JSON.stringify(this.formulario.value);
     // localStorage.setItem('postGuardados', postStr);
     // console.log (postStr)
   }
-
-  //  { { currentDate | date: 'dd/MM/y hh:mm' } } 
-  // angular.io/api/common/datepape
 
 }
