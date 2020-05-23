@@ -18,3 +18,14 @@ input.ng-invalid.ng-touched , textarea.ng-invalid.ng-touched{
   color: tomato;
   margin-top: 8px;
 }
+
+.navbar,
+a {
+  background-color: lightseagreen;
+  color: white;
+}
+
+.btn {
+  color: white;
+  border: white;
+}

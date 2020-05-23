@@ -1,8 +1,13 @@
 .card img {
-    width: 300px;
+    height: 100%
 }
-.badge {
-    background-color:lightseagreen;
-    padding: 9px;
+
+.navbar, a{
+    background-color: lightseagreen;
     color: white;
+}
+
+.btn {
+    color: white;
+    border: white;
 }

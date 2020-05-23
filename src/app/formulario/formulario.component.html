@@ -1,36 +1,41 @@
-<form class="mt-3" novalidate [formGroup]="formulario" (ngSubmit)="onSubmit()">
-    <div class="form-group">
-        <label>Titulo</label>
-        <input type="text" class="form-control" formControlName="titulo">
-        <p class="error" *ngIf="formulario.controls.titulo.errors?.required && formulario.controls.titulo.touched">El campo título es requerido</p>
-    </div>
-    <div class="form-group">
-        <label>Imagen</label>
-        <input type="text" class="form-control" formControlName="imagen">
-        <p class="error" *ngIf="formulario.controls.imagen.errors?.required && formulario.controls.imagen.touched">El campo imagen es requerido</p>
-    </div>
-    <div class="form-group">
-        <label>Texto</label>
-        <textarea class="form-control" cols="30" rows="10" formControlName="texto"></textarea>
-        <p class="error" *ngIf="formulario.controls.texto.errors?.required && formulario.controls.texto.touched">El campo texto es requerido</p>
-    </div>
-    <div class="d-flex justify-content-around">
+<nav class="navbar navbar-expand-lg navbar-mainbg">
+  <a class="navbar-brand navbar-logo" href="#">Cocina con Ana</a>
+</nav>
+<div class="container">
+    <form class="mt-3" novalidate [formGroup]="formulario" (ngSubmit)="onSubmit($event)">
         <div class="form-group">
-            <label>Autor</label>
-            <input type="text" class="form-control" formControlName="autor">
-            <p class="error" *ngIf="formulario.controls.autor.errors?.required && formulario.controls.autor.touched">El campo autor es requerido</p>
+            <label>Titulo</label>
+            <input type="text" class="form-control" formControlName="titulo">
+            <p class="error" *ngIf="formulario.controls.titulo.errors?.required && formulario.controls.titulo.touched">El campo título es requerido</p>
         </div>
         <div class="form-group">
-           <label>Categoría</label>
-           <select class="custom-select" formControlName="categoria">
-                <option value="aperitivos">Aperitivos</option>
-                <option value="carnes">Carnes</option>
-                <option value="verduras">Verduras</option>
-                <option value="pescados">Pescados</option>
-                <option value="postres">Postres</option>
-            </select>
-            <p class="error" *ngIf="formulario.controls.categoria.errors?.required && formulario.controls.categoria.touched">El campo categoría es requerido</p>
+            <label>Imagen</label>
+            <input type="text" class="form-control" formControlName="imagen">
+            <p class="error" *ngIf="formulario.controls.imagen.errors?.required && formulario.controls.imagen.touched">El campo imagen es requerido</p>
         </div>
-    </div>
-    <input class="btn btn-block btn-warning" type="submit" [disabled]="!formulario.valid" value="Enviar">
-</form>
+        <div class="form-group">
+            <label>Texto</label>
+            <textarea class="form-control" cols="20" rows="10" formControlName="texto"></textarea>
+            <p class="error" *ngIf="formulario.controls.texto.errors?.required && formulario.controls.texto.touched">El campo texto es requerido</p>
+        </div>
+        <div class="d-flex justify-content-around">
+            <div class="form-group">
+                <label>Autor</label>
+                <input type="text" class="form-control" formControlName="autor">
+                <p class="error" *ngIf="formulario.controls.autor.errors?.required && formulario.controls.autor.touched">El campo autor es requerido</p>
+            </div>
+            <div class="form-group">
+               <label>Categoría</label>
+               <select class="custom-select" formControlName="categoria">
+                    <option value="aperitivos">Aperitivos</option>
+                    <option value="carnes">Carnes</option>
+                    <option value="verduras">Verduras</option>
+                    <option value="pescados">Pescados</option>
+                    <option value="postres">Postres</option>
+                </select>
+                <p class="error" *ngIf="formulario.controls.categoria.errors?.required && formulario.controls.categoria.touched">El campo categoría es requerido</p>
+            </div>
+        </div>
+        <input class="btn btn-block btn-warning mt-2" type="submit" [disabled]="!formulario.valid" value="Publicar post">
+    </form>
+</div>

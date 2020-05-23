@@ -1,24 +1,45 @@
 <!-- {{arrPost | json}} -->
-<div class="column d-flex mt-4 mb-4 justify-content-center">
-  <button class="btn btn-primary btn-warning col-4" [routerLink]="['/new']">Nuevo post</button>
-  <button class="btn btn-primary col-4 mr-3 ml-3" (click)="onClickTodos()">Todos los posts</button>
-  <select class="col-3 custom-select" (click)="onClickCategoria($event)">
-    <option value="aperitivos">Aperitivos</option>
-    <option value="carnes">Carnes</option>
-    <option value="verduras">Verduras</option>
-    <option value="pescados">Pescados</option>
-    <option value="postres">Postres</option>
-  </select>
-</div>
-<div class="card mb-3" *ngFor="let post of arrPost">
-  <h5 class="card-header">{{post.titulo}}</h5>
-  <div class="card-body">
-    <img class="mt-1 mb-2" [src]="post.imagen">
-    <p class="card-text">{{post.texto}}</p>
-    <div class="colum d-flex justify-content-around">
-      <p class="badge">Autor: {{post.autor}}</p>
-      <p class="badge">Fecha: {{post.fecha | date: 'dd/MM/y hh:mm'}}</p>
-      <p class="badge">Categoría: {{post.categoria}}</p>
+
+<nav class="navbar navbar-expand-lg navbar-mainbg">
+  <a class="navbar-brand navbar-logo" href="#">Cocina con Ana</a>
+  <div class="collapse navbar-collapse">
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item">
+        <button class="btn btn-outline-dark" [routerLink]="['/new']">Escribir un nuevo post</button>
+      </li>
+      <li class="nav-item mr-4 ml-4">
+         <button class="btn btn-outline-dark" (click)="onClickTodos()">Todos los posts</button>
+      </li>
+      <li class="nav-item">
+        <select class="custom-select" (click)="onClickCategoria($event)">
+          <option value="aperitivos">Aperitivos</option>
+          <option value="carnes">Carnes</option>
+          <option value="verdursas">Verduras</option>
+          <option value="pescados">Pescados</option>
+          <option value="postres">Postres</option>
+        </select>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<div class="container mt-5">
+  <div class="card mb-3"  *ngFor="let post of arrPost">
+    <div class="row no-gutters">
+      <div class="col-md-4">
+        <img [src]="post.imagen" class="card-img">
+      </div>
+      <div class="col-md-8">
+        <div class="card-body">
+          <h5 class="card-title">{{post.titulo}}</h5>
+          <p class="card-text">{{post.texto}}</p>
+          <div class="colum d-flex justify-content-around">
+            <p class="card-text"><small class="text-muted">Autor: {{post.autor}}</small></p>
+            <p class="card-text"><small class="text-muted">Fecha: {{post.fecha | date: 'dd/MM/y hh:mm'}}</small></p>
+            <p class="card-text"><small class="text-muted">Categoría: {{post.categoria}}</small></p>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </div>
